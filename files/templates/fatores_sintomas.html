@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatores dos Sintomas</title>
+</head>
+<body>
+    <h1>Fatores dos Sintomas</h1>
+    <form action="{{ url_for('fatores_sintomas') }}" method="POST">
+        <label for="fatores_sintomas">Descreva os fatores que pioram ou melhoram os seus sintomas:</label>
+        <textarea id="fatores_sintomas" name="fatores_sintomas" required>{{ fatores_sintomas }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('evolucao_sintomas') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

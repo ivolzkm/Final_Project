@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico Cirúrgico</title>
+</head>
+<body>
+    <h1>Histórico Cirúrgico</h1>
+    <form action="{{ url_for('historico_cirurgico') }}" method="POST">
+        <label for="historico_cirurgico">Descreva seu histórico cirúrgico:</label>
+        <textarea id="historico_cirurgico" name="historico_cirurgico" required>{{ historico_cirurgico }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('doencas_preexistentes') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

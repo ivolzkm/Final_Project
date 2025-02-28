@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolução dos Sintomas</title>
+</head>
+<body>
+    <h1>Evolução dos Sintomas</h1>
+    <form action="{{ url_for('evolucao_sintomas') }}" method="POST">
+        <label for="evolucao_sintomas">Descreva a evolução dos seus sintomas:</label>
+        <textarea id="evolucao_sintomas" name="evolucao_sintomas" required>{{ evolucao_sintomas }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('historia_doenca') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

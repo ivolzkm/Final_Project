@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História da Doença Atual</title>
+</head>
+<body>
+    <h1>História da Doença Atual</h1>
+    <form action="{{ url_for('historia_doenca') }}" method="POST">
+        <label for="historia_doenca">Descreva a história da sua doença atual:</label>
+        <textarea id="historia_doenca" name="historia_doenca" required>{{ historia_doenca }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('queixa_principal') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

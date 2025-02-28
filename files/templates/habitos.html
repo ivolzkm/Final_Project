@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hábitos de Vida</title>
+</head>
+<body>
+    <h1>Hábitos de Vida</h1>
+    <form action="{{ url_for('habitos') }}" method="POST">
+        <label for="habitos">Descreva seus hábitos de vida (fumo, álcool, drogas):</label>
+        <textarea id="habitos" name="habitos" required>{{ habitos }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('familiar_saude') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

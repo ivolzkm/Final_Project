@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha</title>
+</head>
+<body>
+    <h1>Escolha uma Ação</h1>
+    <form action="{{ url_for('escolha') }}" method="POST">
+        <button type="submit" name="acao" value="avaliacao">Preencher Anamnese</button>
+        <button type="submit" name="acao" value="aguardar">Aguardar</button>
+    </form>
+</body>
+</html>

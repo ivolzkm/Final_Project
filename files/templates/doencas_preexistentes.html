@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doenças Pré-existentes</title>
+</head>
+<body>
+    <h1>Doenças Pré-existentes</h1>
+    <form action="{{ url_for('doencas_preexistentes') }}" method="POST">
+        <label for="doencas_preexistentes">Descreva suas doenças pré-existentes:</label>
+        <textarea id="doencas_preexistentes" name="doencas_preexistentes" required>{{ doencas_preexistentes }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('fatores_sintomas') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

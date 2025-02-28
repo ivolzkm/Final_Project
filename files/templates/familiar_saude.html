@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde Familiar</title>
+</head>
+<body>
+    <h1>Saúde Familiar</h1>
+    <form action="{{ url_for('familiar_saude') }}" method="POST">
+        <label for="familiar_saude">Descreva problemas de saúde em familiares próximos:</label>
+        <textarea id="familiar_saude" name="familiar_saude" required>{{ familiar_saude }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('historico_familiar') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

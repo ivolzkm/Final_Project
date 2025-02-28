@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+    <h1>Exercício</h1>
+    <form action="{{ url_for('exercicio') }}" method="POST">
+        <label for="exercicio">Descreva seus hábitos de exercício:</label>
+        <textarea id="exercicio" name="exercicio" required>{{ exercicio }}</textarea>
+        <br>
+        <button type="submit">Próximo</button>
+    </form>
+
+    <form action="{{ url_for('alimentacao') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>

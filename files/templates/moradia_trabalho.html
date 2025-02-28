@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições de Moradia e Trabalho</title>
+</head>
+<body>
+    <h1>Condições de Moradia e Trabalho</h1>
+    <p>Descreva suas condições de moradia e trabalho:</p>
+
+    <form action="/moradia_trabalho" method="POST">
+        <label for="moradia">Moradia:</label>
+        <textarea id="moradia" name="moradia" required>{{ moradia }}</textarea>
+        <br>
+
+        <label for="trabalho">Trabalho:</label>
+        <textarea id="trabalho" name="trabalho" required>{{ trabalho }}</textarea>
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <form action="{{ url_for('exercicio') }}" method="GET">
+        <button type="submit">Anterior</button>
+    </form>
+</body>
+</html>
