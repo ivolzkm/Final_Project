@@ -1,39 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Profissão, Estado Civil e Endereço</title>
 </head>
 <body>
-    <h1>Profissão, Estado Civil e Endereço</h1>
-    <p>Preencha as informações abaixo:</p>
-
-    <form action="/profissao_estado_endereco" method="POST">
-
-        <label for="profissao">Profissão:</label>
-        <input type="text" id="profissao" name="profissao" value="{{ profissao }}" required>
-        <br>
-
-        <label for="estado_civil">Estado Civil:</label>
-        <select id="estado_civil" name="estado_civil" required>
-            <option value="Solteiro" {% if estado_civil == 'Solteiro' %}selected{% endif %}>Solteiro</option>
-            <option value="Casado" {% if estado_civil == 'Casado' %}selected{% endif %}>Casado</option>
-            <option value="Divorciado" {% if estado_civil == 'Divorciado' %}selected{% endif %}>Divorciado</option>
-            <option value="Viúvo" {% if estado_civil == 'Viúvo' %}selected{% endif %}>Viúvo</option>
-            <option value="Separado Judicialmente" {% if estado_civil == 'Separado Judicialmente' %}selected{% endif %}>Separado Judicialmente</option>
-        </select>
-        <br>
-
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" value="{{ endereco }}" required>
-        <br>
-
-        <button type="submit">Próximo</button>
-    </form>
-
-    <form action="{{ url_for('nome_idade_sexo') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+    <div class="container">
+        <h1>Identificação</h1>
+        <form method="post">
+            <input type="text" name="profissao" placeholder="Profissão" value="{{ profissao }}">
+            <input type="text" name="estado_civil" placeholder="Estado Civil" value="{{ estado_civil }}">
+            <input type="text" name="endereco" placeholder="Endereço" value="{{ endereco }}">
+            <button type="submit">Próximo</button>
+        </form>
+    </div>
 </body>
 </html>

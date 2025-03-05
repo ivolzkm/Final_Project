@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha seu perfil</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Home</title>
 </head>
 <body>
     <div class="container">
-        <h1>Escolha seu perfil</h1>
-        <form action="{{ url_for('escolha_perfil') }}" method="POST">
-           
+        <h1>Bem-vindo</h1>
+        <p>Escolha uma opção:</p>
+        <form method="post" action="/escolha_perfil">
+            <button type="submit" name="perfil" value="doutor">Doutor</button>
+            <button type="submit" name="perfil" value="paciente">Paciente</button>
+        </form>
+    </div>
+</body>
+</html>

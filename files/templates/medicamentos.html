@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Medicamentos</title>
 </head>
 <body>
-    <h1>Medicamentos</h1>
-    <form action="{{ url_for('medicamentos') }}" method="POST">
-        <label for="medicamentos">Descreva os medicamentos que você usa regularmente:</label>
-        <textarea id="medicamentos" name="medicamentos" required>{{ medicamentos }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
-
-    <form action="{{ url_for('historico_cirurgico') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+    <div class="container">
+        <h1>Medicamentos</h1>
+        <p>Você faz uso de algum medicamento regularmente?</p>
+        <form method="post">
+            <textarea name="medicamentos" placeholder="Descreva os medicamentos">{{ medicamentos }}</textarea>
+            <button type="submit">Próximo</button>
+        </form>
+    </div>
 </body>
 </html>

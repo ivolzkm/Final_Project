@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Alimentação</title>
+    <script>
+        function toggleOutro() {
+            var outroInput = document.getElementById('outro-text');
+            var outroRadio = document.getElementById('outro');
+            outroInput.style.display = outroRadio.checked ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
-    <h1>Alimentação</h1>
-    <form action="{{ url_for('alimentacao') }}" method="POST">
-        <label for="alimentacao">Descreva seus hábitos alimentares:</label>
-        <textarea id="alimentacao" name="alimentacao" required>{{ alimentacao }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
-
-    <form action="{{ url_for('habitos') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+    <div class="container">
+        <h1>Alimentação</h1>
+        <form method="post">
+            <p>Como é a sua alimentação diária?</p>
+            <p>
+                <input type="radio" id="equilibrada" name="alimentacao" value="Equilibrada">
+                <label for="equilibrada">Equilibrada (variedade de alimentos saudáveis)</label><br>
+                <input type="radio" id="irregular" name="alimentacao" value="Irregular">
+                <label for="irregular">Irregular (refeições desreguladas ou pouca variedade)</label><br>
+                <input type="radio" id="rica_em_ultraprocessados" name="alimentacao" value="Rica em ultraprocessados">
+                <label for="rica_em_ultraprocessados">Rica em ultraprocessados (fast food, industrializados)</label><br>
+                <input type="radio" id="restritiva" name="alimentacao" value="Restritiva">
+                <label for="restritiva">Restritiva (dieta específica ou restrição alimentar)</label><br>
+                <input type="radio" id="outro" name="alimentacao" value="Outro" onclick="toggleOutro()">
+                <label for="outro">Outro (especificar)</label>
+                <input type="text" id="outro-text" name="outro_text" style="display: none;" placeholder="Especificar...">
+            </p>
+            <button type="submit">Próximo</button>
+        </form>
+    </div>
 </body>
 </html>

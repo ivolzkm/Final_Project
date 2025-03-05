@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Escolha</title>
 </head>
 <body>
-    <h1>Escolha uma Ação</h1>
-    <form action="{{ url_for('escolha') }}" method="POST">
-        <button type="submit" name="acao" value="avaliacao">Preencher Anamnese</button>
-        <button type="submit" name="acao" value="aguardar">Aguardar</button>
-    </form>
+    <div class="container">
+        <h1>Escolha</h1>
+        <form method="post">
+            <button type="submit" name="acao" value="avaliacao">Avaliação</button>
+            <button type="submit" name="acao" value="aguardar">Aguardar</button>
+        </form>
+    </div>
 </body>
 </html>

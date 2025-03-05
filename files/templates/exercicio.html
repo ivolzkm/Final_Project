@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Exercício</title>
 </head>
 <body>
-    <h1>Exercício</h1>
-    <form action="{{ url_for('exercicio') }}" method="POST">
-        <label for="exercicio">Descreva seus hábitos de exercício:</label>
-        <textarea id="exercicio" name="exercicio" required>{{ exercicio }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
-
-    <form action="{{ url_for('alimentacao') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+    <div class="container">
+        <h1>Exercício</h1>
+        <form method="post">
+            <p>Com que frequência você pratica exercícios físicos?</p>
+            <p>
+                <input type="radio" id="diariamente" name="exercicio" value="Diariamente">
+                <label for="diariamente">Diariamente</label><br>
+                <input type="radio" id="algumas_vezes" name="exercicio" value="Algumas vezes por semana">
+                <label for="algumas_vezes">Algumas vezes por semana</label><br>
+                <input type="radio" id="raramente" name="exercicio" value="Raramente">
+                <label for="raramente">Raramente</label><br>
+                <input type="radio" id="nunca" name="exercicio" value="Nunca">
+                <label for="nunca">Nunca</label>
+            </p>
+            <button type="submit">Próximo</button>
+        </form>
+    </div>
 </body>
 </html>

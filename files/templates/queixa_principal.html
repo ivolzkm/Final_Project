@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queixa Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Queixa Principal</h1>
-    <form action="{{ url_for('queixa_principal') }}" method="POST">
-        <label for="queixa_principal">Descreva sua queixa principal:</label>
-        <textarea id="queixa_principal" name="queixa_principal" required>{{ queixa_principal }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
+    <div class="container">
+        <h1>Queixa Principal</h1>
+        <p>Qual é o motivo de sua consulta hoje?</p>
 
-    <form action="{{ url_for('profissao_estado_endereco') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+        <form action="{{ url_for('queixa_principal') }}" method="POST">
+            <label for="queixa_principal"></label>
+            <textarea id="queixa_principal" name="queixa_principal" required>{{ queixa_principal }}</textarea>
+
+            <div class="button-group">
+                <button type="submit">Próximo</button>
+            </div>
+        </form>
+
+        <form action="{{ url_for('profissao_estado_endereco') }}" method="GET" class="button-group">
+            <button type="submit">Anterior</button>
+        </form>
+    </div>
 </body>
 </html>

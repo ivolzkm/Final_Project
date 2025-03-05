@@ -1,0 +1,66 @@
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: #f4f8fb;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    border-left: 6px solid #007bff;
+    
+    /* Para alinhar os itens verticalmente */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adiciona espaçamento entre os elementos */
+}
+
+h1 {
+    color: #007bff;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    font-size: 26px;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(45deg, #007bff, #28a745);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #28a745, #007bff);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}

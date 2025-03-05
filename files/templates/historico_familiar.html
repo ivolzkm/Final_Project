@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Histórico Familiar</title>
 </head>
 <body>
-    <h1>Histórico Familiar</h1>
-    <form action="{{ url_for('historico_familiar') }}" method="POST">
-        <label for="historico_familiar">Descreva seu histórico familiar de doenças:</label>
-        <textarea id="historico_familiar" name="historico_familiar" required>{{ historico_familiar }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
-
-    <form action="{{ url_for('medicamentos') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+    <div class="container">
+        <h1>Histórico Familiar</h1>
+        <p>Algum parente próximo tem ou teve alguma doença crônica?</p>
+        <form method="post">
+            <textarea name="historico_familiar" placeholder="Descreva o histórico familiar">{{ historico_familiar }}</textarea>
+            <button type="submit">Próximo</button>
+        </form>
+    </div>
 </body>
 </html>

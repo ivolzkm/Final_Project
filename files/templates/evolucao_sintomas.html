@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evolução dos Sintomas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Evolução dos Sintomas</h1>
-    <form action="{{ url_for('evolucao_sintomas') }}" method="POST">
-        <label for="evolucao_sintomas">Descreva a evolução dos seus sintomas:</label>
-        <textarea id="evolucao_sintomas" name="evolucao_sintomas" required>{{ evolucao_sintomas }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
+    <div class="container">
+        <h1>Evolução dos Sintomas</h1>
+        <p>Os seus sintomas melhoraram, pioraram ou continuam iguais?</p>
 
-    <form action="{{ url_for('historia_doenca') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+        <form action="{{ url_for('evolucao_sintomas') }}" method="POST">
+            <div>
+                <input type="radio" id="melhoraram" name="evolucao_sintomas" value="Melhoraram" required>
+                <label for="melhoraram">Melhoraram</label>
+            </div>
+            <div>
+                <input type="radio" id="pioraram" name="evolucao_sintomas" value="Pioraram">
+                <label for="pioraram">Pioraram</label>
+            </div>
+            <div>
+                <input type="radio" id="continuam_iguais" name="evolucao_sintomas" value="Continuam iguais">
+                <label for="continuam_iguais">Continuam iguais</label>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Próximo</button>
+            </div>
+        </form>
+
+        <form action="{{ url_for('doencas_preexistentes') }}" method="GET" class="button-group">
+            <button type="submit">Anterior</button>
+        </form>
+    </div>
 </body>
 </html>

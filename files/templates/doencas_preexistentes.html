@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doenças Pré-existentes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Doenças Pré-existentes</h1>
-    <form action="{{ url_for('doencas_preexistentes') }}" method="POST">
-        <label for="doencas_preexistentes">Descreva suas doenças pré-existentes:</label>
-        <textarea id="doencas_preexistentes" name="doencas_preexistentes" required>{{ doencas_preexistentes }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
+    <div class="container">
+        <h1>Doenças Pré-existentes</h1>
 
-    <form action="{{ url_for('fatores_sintomas') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+        <p>Você tem ou já teve alguma doença crônica?</p>
+
+        <form action="{{ url_for('doencas_preexistentes') }}" method="POST">
+           
+            <textarea id="doencas_preexistentes" name="doencas_preexistentes" required>{{ doencas_preexistentes }}</textarea>
+
+            <div class="button-group">
+                <button type="submit">Próximo</button>
+            </div>
+        </form>
+
+       <form action="{{ url_for('evolucao_sintomas') }}" method="GET" class="button-group">
+
+            <button type="submit">Anterior</button>
+        </form>
+    </div>
 </body>
 </html>

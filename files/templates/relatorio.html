@@ -3,59 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório da Anamnese</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Relatório do Paciente</title>
 </head>
 <body>
-    <h1>Relatório da Anamnese</h1>
-    <p>As informações coletadas são apresentadas abaixo:</p>
-
-    <h2>Identificação do Paciente</h2>
-    <p><strong>Nome:</strong> {{ nome }}</p>
-    <p><strong>Idade:</strong> {{ idade }}</p>
-    <p><strong>Sexo:</strong> {{ sexo }}</p>
-
-    <h2>Profissão, Estado Civil e Endereço</h2>
-    <p><strong>Profissão:</strong> {{ profissao }}</p>
-    <p><strong>Estado Civil:</strong> {{ estado_civil }}</p>
-    <p><strong>Endereço:</strong> {{ endereco }}</p>
-
-    <h2>Queixa Principal</h2>
-    <p>{{ queixa_principal }}</p>
-
-    <h2>História da Doença Atual</h2>
-    <p>{{ historia_doenca }}</p>
-
-    <h2>Evolução dos Sintomas</h2>
-    <p>{{ evolucao_sintomas }}</p>
-
-    <h2>Fatores dos Sintomas</h2>
-    <p>{{ fatores_sintomas }}</p>
-
-    <h2>Doenças Pré-existentes</h2>
-    <p>{{ doencas_preexistentes }}</p>
-
-    <h2>Histórico Cirúrgico</h2>
-    <p>{{ historico_cirurgico }}</p>
-
-    <h2>Medicamentos</h2>
-    <p>{{ medicamentos }}</p>
-
-    <h2>Histórico Familiar</h2>
-    <p>{{ historico_familiar }}</p>
-
-    <h2>Saúde Familiar</h2>
-    <p>{{ familiar_saude }}</p>
-
-    <h2>Hábitos de Vida</h2>
-    <p>{{ habitos }}</p>
-
-    <h2>Alimentação e Exercícios Físicos</h2>
-    <p><strong>Alimentação:</strong> {{ alimentacao }}</p>
-    <p><strong>Exercícios Físicos:</strong> {{ exercicio }}</p>
-
-    <h2>Condições de Moradia e Trabalho</h2>
-    <p><strong>Moradia:</strong> {{ moradia }}</p>
-    <p><strong>Trabalho:</strong> {{ trabalho }}</p>
-
+    <div class="container">
+        <h1>Relatório do Paciente</h1>
+        <ul>
+            <li><strong>Nome:</strong> {{ nome }}</li>
+            <li><strong>Idade:</strong> {{ idade }}</li>
+            <li><strong>Sexo:</strong> {{ sexo }}</li>
+            <li><strong>Profissão:</strong> {{ profissao }}</li>
+            <li><strong>Estado Civil:</strong> {{ estado_civil }}</li>
+            <li><strong>Endereço:</strong> {{ endereco }}</li>
+            <li><strong>Queixa Principal:</strong> {{ queixa_principal or 'Não informada' }}</li>
+            <li><strong>História da Doença Atual:</strong> {{ historia_doenca_atual or 'Não informada' }}</li>
+            <li><strong>História Médica Pregressa:</strong> {{ historia_medica_pregressa or 'Não informada' }}</li>
+            <li><strong>Histórico Familiar:</strong> {{ historico_familiar or 'Não informado' }}</li>
+            <li><strong>Histórico Cirúrgico:</strong> {{ historico_cirurgico or 'Não informado' }}</li>
+            <li><strong>Medicamentos:</strong> {{ medicamentos or 'Não informados' }}</li>
+            <li><strong>Alimentação:</strong> {{ alimentacao or 'Não informada' }}</li>
+            <li><strong>Exercício:</strong> {{ exercicio or 'Não informado' }}</li>
+            <li><strong>Moradia:</strong> {{ moradia or 'Não informada' }}</li>
+            <li><strong>Trabalho:</strong> {{ trabalho or 'Não informado' }}</li>
+        </ul>
+        <a href="{{ url_for('pacientes') }}">Voltar</a>
+    </div>
 </body>
 </html>

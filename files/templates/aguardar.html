@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Aguardar</title>
 </head>
 <body>
-    <h1>Por favor, aguarde...</h1>
-    <form action="{{ url_for('escolha') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+    <div class="container">
+        <h1>Aguardar</h1>
+        <p>Por favor, aguarde até ser chamado.</p>
+    </div>
 </body>
 </html>

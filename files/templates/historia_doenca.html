@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>História da Doença Atual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>História da Doença Atual</h1>
-    <form action="{{ url_for('historia_doenca') }}" method="POST">
-        <label for="historia_doenca">Descreva a história da sua doença atual:</label>
-        <textarea id="historia_doenca" name="historia_doenca" required>{{ historia_doenca }}</textarea>
-        <br>
-        <button type="submit">Próximo</button>
-    </form>
+    <div class="container">
+        <h1>História da Doença Atual</h1>
+	<p>Quando começaram os sintomas?</p>
+        <form action="{{ url_for('historia_doenca') }}" method="POST">
+    
+            <textarea id="historia_doenca" name="historia_doenca" required>{{ historia_doenca }}</textarea>
 
-    <form action="{{ url_for('queixa_principal') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+           
+            <div class="button-group">
+                <button type="submit">Próximo</button>
+            </div>
+        </form>
+
+        <form action="{{ url_for('queixa_principal') }}" method="GET" class="button-group">
+            <button type="submit">Anterior</button>
+        </form>
+    </div>
 </body>
 </html>

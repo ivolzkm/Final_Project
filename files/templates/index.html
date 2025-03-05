@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Página Inicial</title>
 </head>
 <body>
-    <h1>Bem-vindo ao Sistema de Anamnese</h1>
-    <a href="{{ url_for('escolha') }}">
-        <button type="button">Iniciar</button>
-    </a>
+    <div class="container">
+        <h1>Bem-vindo ao Sistema de Anamnese</h1>
+        <p>Este sistema ajuda a otimizar o processo de coleta de informações médicas para um atendimento mais eficiente.</p>
+        <a href="{{ url_for('escolha') }}">
+            <button type="button">Iniciar</button>
+        </a>
+    </div>
 </body>
 </html>

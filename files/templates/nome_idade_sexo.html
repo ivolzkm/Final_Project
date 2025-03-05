@@ -1,36 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identificação do Paciente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Nome, Idade e Sexo</title>
 </head>
 <body>
-    <h1>Identificação do Paciente</h1>
-    <p>Por favor, preencha as informações abaixo:</p>
-
-    <form action="/nome_idade_sexo" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="{{ nome }}" required>
-        <br>
-
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" value="{{ idade }}" required>
-        <br>
-
-        <label for="sexo">Sexo:</label>
-        <select id="sexo" name="sexo" required>
-            <option value="Masculino" {% if sexo == 'Masculino' %}selected{% endif %}>Masculino</option>
-            <option value="Feminino" {% if sexo == 'Feminino' %}selected{% endif %}>Feminino</option>
-            <option value="Outro" {% if sexo == 'Outro' %}selected{% endif %}>Outro</option>
-        </select>
-        <br>
-
-        <button type="submit">Próximo</button>
-    </form>
-
-    <form action="{{ url_for('escolha') }}" method="GET">
-        <button type="submit">Anterior</button>
-    </form>
+    <div class="container">
+        <h1>Identificação</h1>
+        <form method="post">
+            <input type="text" name="nome" placeholder="Nome" value="{{ nome }}">
+            <input type="number" name="idade" placeholder="Idade" value="{{ idade }}">
+            <select name="sexo">
+                <option value="M" {% if sexo == 'M' %}selected{% endif %}>Masculino</option>
+                <option value="F" {% if sexo == 'F' %}selected{% endif %}>Feminino</option>
+                <option value="NB" {% if sexo == 'NB' %}selected{% endif %}>Não binário</option>
+            </select>
+            <button type="submit">Próximo</button>
+        </form>
+    </div>
 </body>
 </html>
