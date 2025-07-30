@@ -1,8 +1,11 @@
-# Flask Anamnese App
+# Fila de Espera
 
-This is a Flask web application for collecting patient anamnesis data. The application guides the user through a series of forms to collect various health-related information.
+Esse é um website criado com python e flask, que visa otimizar a dinâmica clínico-hospitalar através de um ambiente virtual interativo onde pacientes, durante as filas de espera, podem fornecer informações pertinentes ao diagnóstico. 
 
-## Templates
+Em resumo, é um formulário de respostas que são armazenass em uma base organizada de dados que simulam um prontuário, onde o profissional de sáude teria acesso através de um login. 
+
+
+##  Templates
 
 The application uses the following HTML templates:
 
